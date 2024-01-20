@@ -15,6 +15,7 @@ import {
 
 import { Checkbox } from "@/components/ui/checkbox"
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header"
+import {DataTableSearchableColumn} from "@/components/data-table/types";
 
 export type Payment = {
   id: string
@@ -96,5 +97,12 @@ export const columns: ColumnDef<Payment>[] = [
         </div>
       )
     },
+  },
+]
+
+export const searchableColumns: DataTableSearchableColumn<Payment>[] = [
+  {
+    id: "email",
+    title: "Email",
   },
 ]
