@@ -24,8 +24,8 @@ import {
 } from "@/components/ui/table"
 
 import { Input } from "@/components/ui/input"
-import { DataTablePagination } from "@/components/data-table/DataTablePagination"
-import { DataTableViewOptions } from "@/components/data-table/DataTableViewOptions"
+import { DataTablePagination } from "@/components/data-table/data-table-pagination"
+import { DataTableViewOptions } from "@/components/data-table/data-table-view-options"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
