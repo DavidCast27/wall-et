@@ -16,6 +16,7 @@ export default async function Index() {
   };
 
   const isSupabaseConnected = canInitSupabaseClient();
+  if (!isSupabaseConnected) <div> no connect</div>;
 
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">

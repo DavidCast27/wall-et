@@ -1,25 +1,25 @@
-
+import React from "react";
 
 export type Option = {
-    label: string
-    value: string
-    icon?: React.ComponentType<{ className?: string }>
-}
+  label: string;
+  value: string;
+  icon?: React.ComponentType<{ className?: string }>;
+};
 
 export interface DataTableFilterOption<TData> {
-    id?: string
-    label: string
-    value: keyof TData | string
-    items: Option[]
-    isMulti?: boolean
+  id?: string;
+  label: string;
+  value: keyof TData | string;
+  items: Option[];
+  isMulti?: boolean;
 }
 
 export interface DataTableSearchableColumn<TData> {
-    id: keyof TData
-    title: string
+  id: keyof TData;
+  title: string;
 }
 
 export interface DataTableFilterableColumn<TData>
-    extends DataTableSearchableColumn<TData> {
-    options: Option[]
+  extends DataTableSearchableColumn<TData> {
+  options: Option[];
 }
