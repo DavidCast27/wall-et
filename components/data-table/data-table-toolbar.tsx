@@ -26,8 +26,6 @@ export function DataTableToolbar<TData>({
   filterableColumns = [],
   searchableColumns = [],
 }: DataTableToolbarProps<TData>) {
-  //const [isPending, startTransition] = React.useTransition();
-
   const isFiltered = table.getState().columnFilters.length > 0;
 
   return (
@@ -54,39 +52,6 @@ export function DataTableToolbar<TData>({
         )}
       </div>
       <div className="flex items-center space-x-2">
-        {/*{deleteRowsAction && table.getSelectedRowModel().rows.length > 0 ? (*/}
-        {/*    <Button*/}
-        {/*        aria-label="Delete selected rows"*/}
-        {/*        variant="outline"*/}
-        {/*        size="sm"*/}
-        {/*        className="h-8"*/}
-        {/*        onClick={(event) => {*/}
-        {/*            startTransition(() => {*/}
-        {/*                table.toggleAllPageRowsSelected(false)*/}
-        {/*                deleteRowsAction(event)*/}
-        {/*            })*/}
-        {/*        }}*/}
-        {/*        disabled={isPending}*/}
-        {/*    >*/}
-        {/*        <TrashIcon className="mr-2 h-4 w-4" aria-hidden="true" />*/}
-        {/*        Delete*/}
-        {/*    </Button>*/}
-        {/*) : newRowLink ? (*/}
-        {/*    <Link aria-label="Create new row" href={newRowLink}>*/}
-        {/*        <div*/}
-        {/*            className={cn(*/}
-        {/*                buttonVariants({*/}
-        {/*                    variant: "outline",*/}
-        {/*                    size: "sm",*/}
-        {/*                    className: "h-8",*/}
-        {/*                })*/}
-        {/*            )}*/}
-        {/*        >*/}
-        {/*            <PlusCircledIcon className="mr-2 h-4 w-4" aria-hidden="true" />*/}
-        {/*            New*/}
-        {/*        </div>*/}
-        {/*    </Link>*/}
-        {/*) : null}*/}
         <DataTableViewOptions table={table} />
       </div>
     </div>
