@@ -1,5 +1,11 @@
-import {Payment, columns, searchableColumns, filterableColumns} from "./columns"
-import { DataTable } from "@/components/data-table/data-table"
+import { DataTable } from "@/components/data-table/data-table";
+
+import {
+  Payment,
+  columns,
+  filterableColumns,
+  searchableColumns,
+} from "./columns";
 
 async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
@@ -77,19 +83,20 @@ async function getData(): Promise<Payment[]> {
       email: "b@example.com",
     },
     // ...
-  ]
+  ];
 }
 
 export default async function DemoPage() {
-  const data = await getData()
+  const data = await getData();
 
   return (
     <div className="container mx-auto py-10">
       <DataTable
-          columns={columns}
-          data={data}
-          searchableColumns={searchableColumns}
-          filterableColumns={filterableColumns}/>
+        columns={columns}
+        data={data}
+        searchableColumns={searchableColumns}
+        filterableColumns={filterableColumns}
+      />
     </div>
-  )
+  );
 }

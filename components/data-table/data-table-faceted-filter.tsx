@@ -2,7 +2,7 @@
 import { CheckIcon, PlusCircledIcon } from "@radix-ui/react-icons";
 import { type Column } from "@tanstack/react-table";
 
-import { cn } from "@/lib/utils";
+import { Option } from "@/components/data-table/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +20,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
-import { Option } from "@/components/data-table/types";
+import { cn } from "@/lib/utils";
 
 interface DataTableFacetedFilterProps<TData, TValue> {
   column?: Column<TData, TValue>;

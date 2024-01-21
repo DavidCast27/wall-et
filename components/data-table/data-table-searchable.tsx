@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
-import { Input } from "@/components/ui/input";
 import type { Table } from "@tanstack/react-table";
+import React from "react";
+
 import type { DataTableSearchableColumn } from "@/components/data-table/types";
+import { Input } from "@/components/ui/input";
 
 interface DataTableSearchableProps<TData> {
   table: Table<TData>;

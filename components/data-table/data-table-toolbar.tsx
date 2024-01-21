@@ -1,15 +1,17 @@
 "use client";
+import { Cross2Icon } from "@radix-ui/react-icons";
+import type { Table } from "@tanstack/react-table";
 import * as React from "react";
+
+import DataTableFiltered from "@/components/data-table/data-table-filtered";
+import { DataTableSearchable } from "@/components/data-table/data-table-searchable";
+import { DataTableViewOptions } from "@/components/data-table/data-table-view-options";
+import { Button } from "@/components/ui/button";
+
 import type {
   DataTableFilterableColumn,
   DataTableSearchableColumn,
 } from "./types";
-import type { Table } from "@tanstack/react-table";
-import { DataTableViewOptions } from "@/components/data-table/data-table-view-options";
-import { DataTableSearchable } from "@/components/data-table/data-table-searchable";
-import DataTableFiltered from "@/components/data-table/data-table-filtered";
-import { Button } from "@/components/ui/button";
-import { Cross2Icon } from "@radix-ui/react-icons";
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;

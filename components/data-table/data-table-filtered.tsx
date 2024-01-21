@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
-import { DataTableFacetedFilter } from "@/components/data-table/data-table-faceted-filter";
 import type { Table } from "@tanstack/react-table";
+import React from "react";
+
+import { DataTableFacetedFilter } from "@/components/data-table/data-table-faceted-filter";
 import type { DataTableFilterableColumn } from "@/components/data-table/types";
 
 interface DataTableFilteredProps<TData> {
