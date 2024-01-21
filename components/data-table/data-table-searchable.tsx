@@ -1,13 +1,14 @@
+"use client"
 import React from 'react';
 import {Input} from "@/components/ui/input";
 import type {Table} from "@tanstack/react-table";
 import type {DataTableSearchableColumn} from "@/components/data-table/types";
 
-interface DataTableFiltersInputProps<TData> {
+interface DataTableSearchableProps<TData> {
     table: Table<TData>
     searchableColumns: DataTableSearchableColumn<TData>[]
 }
-export function DataTableFiltersInput<TData>({table,searchableColumns}:DataTableFiltersInputProps<TData>) {
+export function DataTableSearchable<TData>({table,searchableColumns}:DataTableSearchableProps<TData>) {
     return (
         <>
             {searchableColumns.length > 0 && searchableColumns.map(

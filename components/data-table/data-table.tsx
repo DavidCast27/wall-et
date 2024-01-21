@@ -1,6 +1,5 @@
 "use client"
 import * as React from "react"
-
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -22,23 +21,23 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-
-import { Input } from "@/components/ui/input"
 import { DataTablePagination } from "@/components/data-table/data-table-pagination"
-import { DataTableViewOptions } from "@/components/data-table/data-table-view-options"
 import {DataTableToolbar} from "@/components/data-table/data-table-toolbar";
-import {DataTableSearchableColumn} from "@/components/data-table/types";
+import {DataTableFilterableColumn, DataTableSearchableColumn} from "@/components/data-table/types";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
   searchableColumns?: DataTableSearchableColumn<TData>[]
+  filterableColumns?: DataTableFilterableColumn<TData>[]
+
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
-  searchableColumns,
+  searchableColumns = [],
+  filterableColumns = [],
 }: DataTableProps<TData, TValue>) {
 
   const [sorting, setSorting] = React.useState<SortingState>([])
@@ -73,7 +72,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <DataTableToolbar table={table} searchableColumns={searchableColumns} />
+      <DataTableToolbar table={table} searchableColumns={searchableColumns} filterableColumns={filterableColumns} />
       <div className="rounded-md border">
         <Table>
           <TableHeader>

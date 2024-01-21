@@ -15,7 +15,7 @@ import {
 
 import { Checkbox } from "@/components/ui/checkbox"
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header"
-import {DataTableSearchableColumn} from "@/components/data-table/types";
+import {DataTableFilterableColumn, DataTableSearchableColumn} from "@/components/data-table/types";
 
 export type Payment = {
   id: string
@@ -50,6 +50,9 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "status",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
+    filterFn: (row, id, value) => {
+      return value instanceof Array && value.includes(row.getValue(id))
+    },
 
   },
   {
@@ -104,5 +107,18 @@ export const searchableColumns: DataTableSearchableColumn<Payment>[] = [
   {
     id: "email",
     title: "Email",
+  },
+]
+
+export const filterableColumns: DataTableFilterableColumn<Payment>[] = [
+  {
+    id: "status",
+    title: "Status",
+    options: [
+        {label: "pending", value: "pending"},
+        {label: "processing", value: "processing"},
+        {label: "success", value: "success"},
+        {label: "failed", value: "failed"},
+    ],
   },
 ]

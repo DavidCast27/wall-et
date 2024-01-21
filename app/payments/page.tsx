@@ -1,4 +1,4 @@
-import {Payment, columns, searchableColumns} from "./columns"
+import {Payment, columns, searchableColumns, filterableColumns} from "./columns"
 import { DataTable } from "@/components/data-table/data-table"
 
 async function getData(): Promise<Payment[]> {
@@ -7,7 +7,7 @@ async function getData(): Promise<Payment[]> {
     {
       id: "728ed52f",
       amount: 100,
-      status: "pending",
+      status: "processing",
       email: "m@example.com",
     },
     {
@@ -19,7 +19,7 @@ async function getData(): Promise<Payment[]> {
     {
       id: "728ed52f",
       amount: 100,
-      status: "pending",
+      status: "processing",
       email: "b@example.com",
     },
     {
@@ -31,7 +31,7 @@ async function getData(): Promise<Payment[]> {
     {
       id: "728ed52f",
       amount: 100,
-      status: "pending",
+      status: "processing",
       email: "a@example.com",
     },
     {
@@ -43,7 +43,7 @@ async function getData(): Promise<Payment[]> {
     {
       id: "728ed52f",
       amount: 100,
-      status: "pending",
+      status: "success",
       email: "m@example.com",
     },
     {
@@ -55,7 +55,7 @@ async function getData(): Promise<Payment[]> {
     {
       id: "728ed52f",
       amount: 100,
-      status: "pending",
+      status: "processing",
       email: "b@example.com",
     },
     {
@@ -67,13 +67,13 @@ async function getData(): Promise<Payment[]> {
     {
       id: "728ed52f",
       amount: 100,
-      status: "pending",
+      status: "success",
       email: "a@example.com",
     },
     {
       id: "728ed52f",
       amount: 100,
-      status: "pending",
+      status: "success",
       email: "b@example.com",
     },
     // ...
@@ -85,7 +85,11 @@ export default async function DemoPage() {
 
   return (
     <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={data} searchableColumns={searchableColumns}/>
+      <DataTable
+          columns={columns}
+          data={data}
+          searchableColumns={searchableColumns}
+          filterableColumns={filterableColumns}/>
     </div>
   )
 }
